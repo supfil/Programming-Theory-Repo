@@ -5,6 +5,7 @@ using UnityEngine;
 
 public abstract class Shape : MonoBehaviour
 {
+
     public Color shapeColor;
 
     private string m_ShapeName;
