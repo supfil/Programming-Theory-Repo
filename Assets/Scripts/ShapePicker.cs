@@ -6,14 +6,18 @@ using TMPro;
 
 public class ShapePicker : MonoBehaviour
 {
-    private GameObject chosenShape;
+    public ButtonUI createButton;
+
+    
     private GameObject[] pickAShape = GameManager.Instance.shapeAviable;
     public Button buttonPrefab;
 
-    public List<Button> buttonList = new List<Button>();
+    private List<Button> buttonList = new List<Button>();
 
     private void Start()
     {
+        createButton = GameObject.Find("CreateButton").GetComponent<ButtonUI>();
+
         foreach (GameObject gameobject in pickAShape)
         {
             var newButton = Instantiate(buttonPrefab, transform);
@@ -22,7 +26,7 @@ public class ShapePicker : MonoBehaviour
 
             newButton.onClick.AddListener(() =>
             {
-                chosenShape = gameobject;
+                createButton.gameObject = gameobject;
                 foreach (Button button in buttonList)
                 {
                     button.interactable = true;

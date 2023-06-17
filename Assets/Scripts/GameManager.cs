@@ -22,13 +22,4 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void CreateShape(GameObject gameObject, Color color)
-    {
-        var shape = Instantiate(gameObject, transform);
-
-        if (shape.GetComponent<Ball>() != null)
-            shape.GetComponent<Ball>().shapeColor = color;
-        else
-            shape.GetComponent<Square>().shapeColor = color;
-    }
 }

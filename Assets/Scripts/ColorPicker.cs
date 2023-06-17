@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class ColorPicker : MonoBehaviour
 {
-    private Color chosenColor;
+    public ButtonUI createButton;
+
+
     private Color[] pickAColor = GameManager.Instance.colorAviable;
     public Button buttonPrefab;
 
-    public List<Button> buttonList = new List<Button>();
+    private List<Button> buttonList = new List<Button>();
 
     private void Start()
     {
+        createButton = GameObject.Find("CreateButton").GetComponent<ButtonUI>();
+
         foreach(Color colors in pickAColor)
         {
             var newButton = Instantiate(buttonPrefab, transform);
@@ -21,7 +25,7 @@ public class ColorPicker : MonoBehaviour
             
             newButton.onClick.AddListener(() =>
             {
-                chosenColor = colors;
+                createButton.color = colors;
                 foreach (Button button in buttonList)
                 {
                     button.interactable = true;
