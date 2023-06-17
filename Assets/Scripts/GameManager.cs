@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public Color[] colorAviable;
     public GameObject[] shapeAviable;
 
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance { get; private set; } // ENCAPSULATION
 
     private void Awake()
     {

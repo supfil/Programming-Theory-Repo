@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class Shape : MonoBehaviour
+public abstract class Shape : MonoBehaviour// ABSTRACTION
 {
 
-    public Color shapeColor;
+    public Color shapeColor;    
 
-    private string m_ShapeName;
-    public string shapeName
+    private string m_ShapeName;// ENCAPSULATION
+    public string shapeName// ENCAPSULATION
     {
         get { return m_ShapeName; }
         set
@@ -31,7 +31,7 @@ public abstract class Shape : MonoBehaviour
         shapeName = name;
     }
 
-    public abstract void DisplayText();
+    public abstract void DisplayText();// ABSTRACTION
 
     public virtual void OnMouseDown()
     {
